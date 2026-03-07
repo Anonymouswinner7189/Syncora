@@ -52,7 +52,7 @@ const MeetingModal = ({
           </h1>
           {children}
           <Button
-            className="bg-blue-1 focus-visible:ring-0 focus-visible:ring-offset-0"
+            className="bg-blue-1 focus-visible:ring-0 focus-visible:ring-offset-0 cursor-pointer"
             onClick={handleClick}
           >
             {buttonIcon && (
@@ -63,7 +63,8 @@ const MeetingModal = ({
                 height={13}
                 className="mr-2"
               />
-            )} &nbsp;
+            )}{" "}
+            &nbsp;
             {buttonText || "Schedule Meeting"}
           </Button>
         </div>
