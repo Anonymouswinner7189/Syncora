@@ -1,4 +1,3 @@
-import { cn } from "@/lib/utils";
 import {
   CallControls,
   CallingState,
@@ -17,10 +16,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LayoutList, Users } from "lucide-react";
 import { Button } from "./ui/button";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import EndCallButton from "./EndCallButton";
 import Loader from "./Loader";
 
@@ -28,11 +27,18 @@ type CallLayoutType = "grid" | "speaker-left" | "speaker-right";
 
 const MeetingRoom = () => {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const isPersonalRoom = !!searchParams.get("personal");
   const [layout, setLayout] = useState<CallLayoutType>("speaker-left");
   const [showParticipants, setShowParticipants] = useState(false);
   const { useCallCallingState } = useCallStateHooks();
   const callingState = useCallCallingState();
+
+  useEffect(() => {
+    if (callingState === CallingState.LEFT) {
+      router.push("/");
+    }
+  }, [callingState, router]);
 
   if (callingState !== CallingState.JOINED) return <Loader />;
 
