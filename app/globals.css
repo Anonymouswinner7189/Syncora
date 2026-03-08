@@ -9,8 +9,12 @@
   --font-mono: var(--font-geist-mono);
   --color-dark-1: #1c1f2e;
   --color-dark-2: #161925;
+  --color-dark-3: #252a41;
+  --color-dark-4: #1e2757;
   --color-blue-1: #0e78f9;
   --color_sky-1: #c9ddff;
+  --color-sky-2: #ecf0ff;
+  --color-sky-3: #f5fcff;
   --color-orange-1: #ff742e;
   --color-purple-1: #830ef9;
   --color-yellow-1: #f9a90e;
@@ -72,33 +76,7 @@
   -webkit-backdrop-filter: blur(8px);
 }
 
-/* ==== clerk class override ===== */
-
-.cl-userButtonPopoverActionButtonIcon {
-  color: white;
-}
-
-.cl-logoBox {
-  height: 40px;
-}
-.cl-dividerLine {
-  background: #252a41;
-  height: 2px;
-}
-
-.cl-socialButtonsIconButton {
-  border: 3px solid #565761;
-}
-
-.cl-internal-wkkub3 {
-  color: white;
-}
-.cl-userButtonPopoverActionButton {
-  color: white;
-}
-
 /* animation */
-
 .show-block {
   width: 100%;
   max-width: 350px;
