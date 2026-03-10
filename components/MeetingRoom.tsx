@@ -34,6 +34,12 @@ const MeetingRoom = () => {
   const { useCallCallingState } = useCallStateHooks();
   const callingState = useCallCallingState();
 
+  useEffect(() => {
+    if (callingState === CallingState.LEFT) {
+      router.push("/");
+    }
+  }, [callingState, router]);
+
   if (callingState !== CallingState.JOINED) return <Loader />;
 
   const CallLayout = () => {
@@ -67,11 +73,7 @@ const MeetingRoom = () => {
 
       {/* Bottom Controls */}
       <div className="fixed bottom-0 flex w-full items-center justify-center gap-5 flex-wrap">
-        <CallControls
-          onLeave={() => {
-            router.push("/");
-          }}
-        />
+        <CallControls />
 
         {/* Layout Switcher */}
         <DropdownMenu>
