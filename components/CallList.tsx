@@ -79,8 +79,8 @@ const CallList = ({ type }: { type: "ended" | "upcoming" | "recordings" }) => {
           <MeetingCard
             key={"id" in meeting ? meeting.id : meeting.filename}
             title={
-              (meeting as Call).state?.custom.description ||
-              meeting.filename.substring(0, 20) ||
+              (meeting as Call).state?.custom?.description ||
+              meeting?.filename?.substring(0, 20) ||
               "No Description"
             }
             date={
