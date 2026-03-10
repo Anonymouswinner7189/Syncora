@@ -38,6 +38,7 @@ const MeetingSetup = ({
             type="checkbox"
             checked={isMikeCamToggledOn}
             onChange={(e) => setIsMikeCamToggledOn(e.target.checked)}
+            className="cursor-pointer"
           />
           Join with mic and camera off
         </label>
